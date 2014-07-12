@@ -1,0 +1,102 @@
+% Place an \includeonly here to only compile certain parts
+% e.g.: \includeonly{title,chapter-first,references}
+
+\documentclass[12pt,oneside]{book}
+\usepackage[T1]{fontenc}
+\usepackage{fancyhdr}           % For page number in the upper right
+                                % (required) and other running headers
+                                % (optional)
+\usepackage{setspace}           % For double-spacing (required)
+\usepackage{titlesec}           % For keeping section/chapter titles
+                                % single-spaced
+\usepackage{etoolbox}           % For the flag determining if front matter
+                                % goes into the TOC
+\usepackage{blindtext}          % For generating dummy text in the sample
+                                % output, can be removed
+\usepackage{natbib}
+
+% Header height (to avoid fancyhdr error)
+\setlength{\headheight}{13.6pt}
+
+% Header formatting for regular pages
+\fancyhf{}
+\fancyhead[L]{\it\small\leftmark}
+\fancyhead[R]{\small\thepage}
+
+% Header formatting for chapter title pages
+\fancypagestyle{plain}{%
+  \fancyhf{}
+  \fancyhead[R]{\small\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+}
+
+% Formatting of chapter and section titles: keep them single-spaced in the
+% midst of double-spaced text
+\titleformat{\chapter}[display]%
+{\bfseries\singlespacing\Large}%
+{Chapter~\thechapter}%
+{1em}%
+{\LARGE}
+
+\titleformat{\section}[hang]%
+{\bfseries\singlespacing\Large}%
+{\thesection}%
+{0.25in}%
+{}
+
+\titleformat{\subsection}[hang]%
+{\bfseries\singlespacing\large}%
+{\thesubsection}%
+{0.25in}%
+{}
+
+% Flag for whether to add front matter to TOC
+\newtoggle{fulltoc}
+\togglefalse{fulltoc}  % Change to \toggletrue{fulltoc} to include front matter
+
+\begin{document}
+
+% Title page
+\include{title}
+
+% All subsequent pages must be numbered, title page is considered page i,
+% front matter is numbered in lowercase Roman numerals
+\pagestyle{fancy}
+\pagenumbering{roman}
+\setcounter{page}{2}
+\doublespacing
+
+% Dedication (optional)
+\include{dedication}
+
+% Biographical sketch
+\include{bio}
+
+% Acknowledgments
+\include{acknowledgments}
+
+% Abstract
+\include{abstract}
+
+% Contributors and Funding Sources
+\include{contrib}
+
+% Table of Contents, List of Tables, List of Figures
+\include{contents}
+
+%%%%%%%%%%%%%%%%%%%% DISSERTATION CONTENT %%%%%%%%%%%%%%%%%%%%
+
+% Regular numbering starts now, first page of first chapter is page 1
+\clearpage
+\setcounter{page}{0}
+\pagenumbering{arabic}
+
+% Body
+\include{chapter-first}
+\include{chapter-second}
+
+% References
+\clearpage
+\include{references}
+
+\end{document}

@@ -1,0 +1,34 @@
+\chapter{A Chapter with a Mathematical Appendix}
+\label{cha:has-app}
+
+\Blindtext[1]
+
+\section{A Section}
+
+\Blindtext[1]
+
+\section{Another Section}
+
+\Blindtext[1]
+
+%%%%%%%%%% APPENDIX %%%%%%%%%%
+
+% Redefine sectioning as letters
+\setcounter{section}{0}
+\let\oldthesection\thesection
+\renewcommand{\thesection}{\thechapter.\Alph{section}}
+\section{Appendix to Chapter~\ref{cha:has-app}}
+
+Sometimes you might want a chapter-specific appendix numbered separately from
+the section numbers in the main text.
+This is especially useful when you are dealing with numbered equations or
+theorems, and want a way to denote that a result lives in the appendix.
+See the source code for this chapter for how this is done.
+
+% Go back to the old section numbering for future chapters
+\let\thesection\oldthesection
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "dissertation"
+%%% End: 
