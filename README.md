@@ -1,3 +1,5 @@
+# PRESENTLY DEFUNCT
+
 # University of Rochester Dissertation Template
 
 This repository contains a LaTeX template for dissertations at the University
