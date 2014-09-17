@@ -1,5 +1,3 @@
-# PRESENTLY DEFUNCT
-
 # University of Rochester Dissertation Template
 
 This repository contains a LaTeX template for dissertations at the University
@@ -19,24 +17,26 @@ The template consists of the following files:
   * `dissertation.tex`: The master document, which includes all packages and
     all content files.
 
-  * `title.tex`: Title page, formatted per guidelines
+  * `01-title.tex`: Title page, formatted per guidelines
 
-  * `dedication.tex`: Dedication (optional)
+  * `02-dedication.tex`: Dedication (optional)
 
-  * `bio.tex`: Biographical Sketch, including sample text
+  * `03-bio.tex`: Biographical Sketch, including sample text
 
-  * `acknowledgments.tex`: Acknowledgments (optional)
+  * `04-acknowledgments.tex`: Acknowledgments (optional)
 
-  * `abstract.tex`: Abstract
+  * `05-abstract.tex`: Abstract
 
-  * `contrib.tex`: Contributors and Funding Sources, including sample text
+  * `06-contrib.tex`: Contributors and Funding Sources, including sample text
 
-  * `contents.tex`: Table of Contents, List of Tables, and List of Figures
+  * `07-contents.tex`: Table of Contents, List of Tables, and List of Figures
 
-  * `chapter-first.tex` and `chapter-second.tex`: Sample chapters
+  * `08-chapter-01.tex` and `08-chapter-02.tex`: Sample chapters
 
-  * `references.tex`: References/bibliography (bib file `sample.bib`)
+  * `09-references.tex`: References/bibliography (bib file `sample.bib`)
 
+The inclusion of the numerals preceding the descriptive names leads to an order
+of the files based on file names that is consistent with their logical order.
 
 ## Building and Cleaning
 
@@ -56,3 +56,21 @@ latexmk -c
 # Remove all generated files, including PDFs
 latexmk -C
 ```
+
+In addition, the file `makefile` is set up to do the same as the `latexmk`
+commands above. To use it, instead run the following:
+
+```bash
+# Compile the dissertation
+make
+
+# Remove auxiliary files, log files, etc., after compilation
+make clean
+
+# Remove all generated files, including PDFs
+make fullclean
+```
+
+One advantage of the `makefile` approach is that you can extend the definitions
+and use [make](http://en.wikipedia.org/wiki/Make_(software)) to accomplish
+*much*, *much* more than just building LaTeX documents.
