@@ -57,7 +57,7 @@
 \begin{document}
 
 % Title page
-\include{title}
+\include{01-title}
 
 % All subsequent pages must be numbered, title page is considered page i,
 % front matter is numbered in lowercase Roman numerals
@@ -67,22 +67,22 @@
 \doublespacing
 
 % Dedication (optional)
-\include{dedication}
+\include{02-dedication}
 
 % Biographical sketch
-\include{bio}
+\include{03-bio}
 
 % Acknowledgments
-\include{acknowledgments}
+\include{04-acknowledgments}
 
 % Abstract
-\include{abstract}
+\include{05-abstract}
 
 % Contributors and Funding Sources
-\include{contrib}
+\include{06-contrib}
 
 % Table of Contents, List of Tables, List of Figures
-\include{contents}
+\include{07-contents}
 
 %%%%%%%%%%%%%%%%%%%% DISSERTATION CONTENT %%%%%%%%%%%%%%%%%%%%
 
@@ -92,11 +92,11 @@
 \pagenumbering{arabic}
 
 % Body
-\include{chapter-first}
-\include{chapter-second}
+\include{08-chapter-01}
+\include{08-chapter-02}
 
 % References
 \clearpage
-\include{references}
+\include{09-references}
 
 \end{document}
