@@ -52,8 +52,8 @@
 
 % Flag for whether to add front matter to TOC
 \newtoggle{fulltoc}
-\togglefalse{fulltoc}  % Change to \toggletrue{fulltoc} to include front matter
-
+\toggletrue{fulltoc}  % Change to \togglefalse{fulltoc} to remove front matter
+\renewcommand{\contentsname}{Table of Contents}
 \begin{document}
 
 % Title page
@@ -69,20 +69,24 @@
 % Dedication (optional)
 \include{02-dedication}
 
+% Table of Contents, List of Tables, List of Figures
+\include{03-contents}
+
 % Biographical sketch
-\include{03-bio}
+\include{04-bio}
 
 % Acknowledgments
-\include{04-acknowledgments}
+\include{05-acknowledgments}
 
 % Abstract
-\include{05-abstract}
+\include{06-abstract}
 
 % Contributors and Funding Sources
-\include{06-contrib}
+\include{07-contrib}
 
-% Table of Contents, List of Tables, List of Figures
-\include{07-contents}
+%List of Tables & Figures
+\include{08-tablesfigures}
+
 
 %%%%%%%%%%%%%%%%%%%% DISSERTATION CONTENT %%%%%%%%%%%%%%%%%%%%
 
@@ -92,11 +96,11 @@
 \pagenumbering{arabic}
 
 % Body
-\include{08-chapter-01}
-\include{08-chapter-02}
+\include{09-chapter-01}
+\include{09-chapter-02}
 
 % References
 \clearpage
-\include{09-references}
+\include{10-references}
 
 \end{document}
