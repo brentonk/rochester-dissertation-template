@@ -3,8 +3,8 @@
 This repository contains a LaTeX template for dissertations at the University
 of Rochester.  It is, to my knowledge, consistent with
 [UR regulations](http://www.rochester.edu/theses/ThesesManual.pdf) as of
-July 2014.  Use at your own risk.  If the requirements change or you notice an
-inconsistency, please submit an issue or pull request and I'll try to update
+November 2016.  Use at your own risk.  If the requirements change or you notice
+an inconsistency, please submit an issue or pull request and I'll try to update
 the template.
 
 Example output is available [here](dissertation.pdf?raw=true).
